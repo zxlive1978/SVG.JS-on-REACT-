@@ -11,7 +11,7 @@ import { SVG } from "@svgdotjs/svg.js";
   const SVGContainer = useMemo(() => SVG(), []);
 
   const draw = () => {
-    SVGContainer.add(SVG().rect(100, 100).fill("#f06"));
+    SVGContainer.add(SVG().rect(window.innerWidth, window.innerHeight).fill("#f06"));
   };
 
   const clear = () => {
