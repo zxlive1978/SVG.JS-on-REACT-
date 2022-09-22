@@ -11,7 +11,18 @@ import { SVG } from "@svgdotjs/svg.js";
   const SVGContainer = useMemo(() => SVG(), []);
 
   const draw = () => {
-    SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
+    // SVGContainer.add(SVG('drawing').rect(100, 100).fill("#a06"));
+    // const draw1 = SVG('drawing').size('100%', '100%');
+
+		// draw1.viewbox(0, 0, '100%', '100%');
+    // var draw2 = SVG().addTo('#someId').size('100%', '100%');
+    // SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
+    // SVGContainer.add(SVG().addTo('app').size(300, 300));
+    // const rect2 = () => {draw.rect(100, 100).attr({ fill: '#f06' });}
+    // SVGContainer.add(rect2);
+    const rect2 = () =>{SVG().rect(100, 100).fill("#a06");}
+    SVGContainer.add(rect2);
+    // SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
   };
 
   const clear = () => {
