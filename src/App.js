@@ -11,7 +11,7 @@ import { SVG } from "@svgdotjs/svg.js";
   const SVGContainer = useMemo(() => SVG(), []);
 
   const draw = () => {
-    SVGContainer.add(SVG().rect(window.innerWidth, window.innerHeight).fill("#f06"));
+    SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
   };
 
   const clear = () => {
@@ -29,10 +29,10 @@ import { SVG } from "@svgdotjs/svg.js";
   }, [SVGWrapperRefElement, SVGContainer]);
 
   return (
-    <div className="app">
+    <div className="app" >
       <button onClick={draw}>Draw</button>
       <button onClick={clear}>Clear</button>
-      <div ref={SVGWrapperRefElement} />
+      <div ref={SVGWrapperRefElement} style = {{height:"100%", minHeight:"100%"}}/>
     </div>
   );
 }
