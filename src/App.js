@@ -43,9 +43,10 @@ import { SVG } from "@svgdotjs/svg.js";
       times: 5,
       wait: 200
     }).attr({ fill: '#f03' });
-    let rect = draw.rect(100, 100)
-let runner = rect.animate()
-
+    
+    
+// let rect = draw.rect(100, 100)
+// let runner = rect.animate()
 // runner.element() // returns or sets the element the runner is bound to
 // runner.timeline() // returns or sets the timeline the runner will be / is scheduled on
 // runner.animate() // for animation chaining. See element.animate()
