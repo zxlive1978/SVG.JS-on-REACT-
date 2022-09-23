@@ -5,6 +5,7 @@ import './App.css';
 
 import { useEffect, useRef, useMemo } from "react";
 import { SVG } from "@svgdotjs/svg.js";
+import '@svgdotjs/svg.draggable.js';
 
  function App() {
   const SVGWrapperRefElement = useRef(null);
@@ -43,6 +44,8 @@ import { SVG } from "@svgdotjs/svg.js";
       times: 5,
       wait: 200
     }).attr({ fill: '#f03' });
+
+    rect.draggable();
     
     
 // let rect = draw.rect(100, 100)

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@svgdotjs/svg.draggable.js": "github:svgdotjs/svg.draggable.js",
     "@svgdotjs/svg.js": "^3.1.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
