@@ -6,9 +6,16 @@ import './App.css';
 import { useEffect, useRef, useMemo } from "react";
 import { SVG } from "@svgdotjs/svg.js";
 import '@svgdotjs/svg.draggable.js';
-import '@svgdotjs/svg.panzoom.js'
+import '@svgdotjs/svg.panzoom.js';
 
+// import { Button } from 'react-bootstrap';
+import  'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+// import Jumbotron from 'react-bootstrap/Jumbotron';
+// import Toast from 'react-bootstrap/Toast';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 // не компилятся
 // import '@svgdotjs/svg.select.js'
 // import '@svgdotjs/svg.easing.js'
@@ -58,7 +65,7 @@ import '@svgdotjs/svg.panzoom.js'
 
     rect.draggable();
 
-    let load = draw.text('Загрузка...').move('500','50%');
+    let load = draw.text('Загрузка...').move('500','500');
     
     
 // let rect = draw.rect(100, 100)
@@ -104,9 +111,23 @@ import '@svgdotjs/svg.panzoom.js'
 
   return (
     <div className="app" >
+  
+     <Container className="p-1">
+   
+      <h1 className="header">Welcome To React-Bootstrap</h1>
+      
+        We now have Toasts
+        <span role="img" aria-label="tada">
+        </span>
+      <Button>dsdsad</Button>
+   
+    </Container>
+
+
+      <h1 className="header">Welcome To React-Bootstrap</h1>
       <button onClick={drawing}>Draw</button>
       <button onClick={clear}>Clear</button>
-      <div  className="app2" ref={SVGWrapperRefElement} style = {{}}/>
+      <div  className="app2" ref={SVGWrapperRefElement} />
     </div>
   );
 }
