@@ -6,6 +6,13 @@ import './App.css';
 import { useEffect, useRef, useMemo } from "react";
 import { SVG } from "@svgdotjs/svg.js";
 import '@svgdotjs/svg.draggable.js';
+import '@svgdotjs/svg.panzoom.js'
+
+
+// не компилятся
+// import '@svgdotjs/svg.select.js'
+// import '@svgdotjs/svg.easing.js'
+
 
  function App() {
   const SVGWrapperRefElement = useRef(null);
@@ -32,7 +39,11 @@ import '@svgdotjs/svg.draggable.js';
     // SVGContainer.add(SVG().polygon('0,0 100,50 50,100').fill('#a06').stroke({ width: 10 }));
     
 
-    SVGContainer.size(900,900);
+    SVGContainer.size('100%', '100%');
+    SVGContainer.viewbox(0, 0, '100%', '100%');
+		SVGContainer.attr('preserveAspectRatio', 'xMidYMid meet');
+
+
     SVGContainer.add(SVG().circle(200).fill("#f06"));
     SVGContainer.polyline('50,0 100,50 50,100');
     let rect = SVGContainer.rect(100, 100);
@@ -93,7 +104,7 @@ import '@svgdotjs/svg.draggable.js';
     <div className="app" >
       <button onClick={draw}>Draw</button>
       <button onClick={clear}>Clear</button>
-      <div  className="app2" ref={SVGWrapperRefElement} style = {{height:"100%", minHeight:"100%"}}/>
+      <div  className="app2" ref={SVGWrapperRefElement} style = {{}}/>
     </div>
   );
 }
