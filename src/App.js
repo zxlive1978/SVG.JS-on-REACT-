@@ -18,7 +18,7 @@ import '@svgdotjs/svg.panzoom.js'
   const SVGWrapperRefElement = useRef(null);
   const SVGContainer = useMemo(() => SVG(), []);
 
-  const draw = () => {
+  const drawing = () => {
     // SVGContainer.add(SVG('drawing').rect(100, 100).fill("#a06"));
     // const draw1 = SVG('drawing').size('100%', '100%');
 
@@ -39,14 +39,14 @@ import '@svgdotjs/svg.panzoom.js'
     // SVGContainer.add(SVG().polygon('0,0 100,50 50,100').fill('#a06').stroke({ width: 10 }));
     
 
-    SVGContainer.size('100%', '100%');
-    SVGContainer.viewbox(0, 0, '100%', '100%');
-		SVGContainer.attr('preserveAspectRatio', 'xMidYMid meet');
+    var draw = SVGContainer.size('100%', '100%');
+    draw.viewbox(0, 0, '100%', '100%');
+		draw.attr('preserveAspectRatio', 'xMidYMid meet');
 
 
-    SVGContainer.add(SVG().circle(200).fill("#f06"));
-    SVGContainer.polyline('50,0 100,50 50,100');
-    let rect = SVGContainer.rect(100, 100);
+    draw.add(SVG().circle(200).fill("#f06"));
+    draw.polyline('50,0 100,50 50,100');
+    let rect = draw.rect(100, 100);
     let runner = rect.animate().animate({
       duration: 2000,
       delay: 1000,
@@ -57,6 +57,8 @@ import '@svgdotjs/svg.panzoom.js'
     }).attr({ fill: '#f03' });
 
     rect.draggable();
+
+    let load = draw.text('Загрузка...').move('500','50%');
     
     
 // let rect = draw.rect(100, 100)
@@ -102,7 +104,7 @@ import '@svgdotjs/svg.panzoom.js'
 
   return (
     <div className="app" >
-      <button onClick={draw}>Draw</button>
+      <button onClick={drawing}>Draw</button>
       <button onClick={clear}>Clear</button>
       <div  className="app2" ref={SVGWrapperRefElement} style = {{}}/>
     </div>
