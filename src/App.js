@@ -21,7 +21,10 @@ import { SVG } from "@svgdotjs/svg.js";
     // const rect2 = () => {draw.rect(100, 100).attr({ fill: '#f06' });}
     // SVGContainer.add(rect2);
     const rect2 = () =>{SVG().rect(100, 100).fill("#a06");}
-    SVGContainer.add(rect2);
+    SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
+    SVGContainer.add(SVG().circle(200).fill("#f06"));
+    SVGContainer.add(SVG().line(0, 0, 100, 150).stroke({ width: 1 }));
+    SVGContainer.add(SVG().circle(300).fill("#b06"));
     // SVGContainer.add(SVG().rect(100, 100).fill("#a06"));
   };
 
@@ -43,7 +46,7 @@ import { SVG } from "@svgdotjs/svg.js";
     <div className="app" >
       <button onClick={draw}>Draw</button>
       <button onClick={clear}>Clear</button>
-      <div ref={SVGWrapperRefElement} style = {{height:"100%", minHeight:"100%"}}/>
+      <div  className="app2" ref={SVGWrapperRefElement} style = {{height:"100%", minHeight:"100%"}}/>
     </div>
   );
 }
