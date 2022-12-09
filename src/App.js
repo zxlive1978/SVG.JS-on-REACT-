@@ -109,7 +109,9 @@ import Button from 'react-bootstrap/Button';
     }
   }, [SVGWrapperRefElement, SVGContainer]);
 
+  let hello = 'Welcome To React-Bootstrap';
   return (
+    
     <div className="app" >
   
      <Container className="p-1">
@@ -125,7 +127,7 @@ import Button from 'react-bootstrap/Button';
     </Container>
 
 
-      <h1 className="header">Welcome To React-Bootstrap</h1>
+      <h1 className="header">{hello}</h1>
       <button onClick={drawing}>Draw</button>
       <button onClick={clear}>Clear</button>
       <div  className="app2" ref={SVGWrapperRefElement} />
